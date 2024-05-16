@@ -50,8 +50,8 @@ int main() {
 				if(base < 0 && expoente % 2 == 0) {
 					base = -base;
 				}
+				printf("\nO resultado é: %f", base);
 			}
-			printf("\nO resultado é: %f", base);
 		}
 		printf("\n\nDeseja continuar? (Sim/Não)\n");
 		scanf("%s", continuar);
