@@ -19,31 +19,43 @@ int main() {
 
 		auxiliar = 0;
 
+		if(base < 0) {
+			vezes = -base;
+		}
+		else {
+			vezes = base;
+		}
+
 		if(base == 0 && expoente < 0) {
 			printf("O resultado é uma indeterminação");
 		}
 		else {
-			if(expoente < 0) {
-				expoente = -expoente;
-				auxiliar = 1;
+			if(expoente == 0) {
+				printf("\nO resultado é: 1");
 			}
-			for(int x = 1; x < expoente; x++) {
-				base_aux = base;
-				for(int y = 1; y < vezes; y++) {
-					base += base_aux;
+			else {
+				if(expoente < 0) {
+					expoente = -expoente;
+					auxiliar = 1;
 				}
-			}
-			if(auxiliar == 1) {
-				base = 1/base;
-			}
-			if(base < 0 && expoente % 2 == 0) {
-				base = -base;
+				for(int x = 1; x < expoente; x++) {
+					base_aux = base;
+					for(int y = 1; y < vezes; y++) {
+						base += base_aux;
+					}
+				}
+				if(auxiliar == 1) {
+					base = 1/base;
+				}
+				if(base < 0 && expoente % 2 == 0) {
+					base = -base;
+				}
 			}
 			printf("\nO resultado é: %f", base);
 		}
 		printf("\n\nDeseja continuar? (Sim/Não)\n");
 		scanf("%s", continuar);
-
+		
 		for(int c = 0; continuar[c]; c++) {
 			continuar[c] = tolower(continuar[c]);
 		}
