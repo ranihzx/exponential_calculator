@@ -27,7 +27,7 @@ int main() {
 		}
 
 		if(base == 0 && expoente < 0) {
-			printf("O resultado é indeterminado");
+			printf("\nO resultado é indeterminado");
 		}
 		else {
 			if(expoente == 0) {
